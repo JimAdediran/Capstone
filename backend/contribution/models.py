@@ -1,5 +1,6 @@
 from django.db import models
 from authentication.models import User
+from place.models import Place
 
 # Create your models here.
 
@@ -18,3 +19,4 @@ class Contribution(models.Model):
     item = models.CharField(max_length=255)
     date_received = models.DurationField()
     marked_for_shipment = models.BooleanField()
+    place = models.ForeignKey(Place, on_delete=models.CASCADE)

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'cars',  # This app is for example use only
     'contribution',
+    'place',
 ]
 
 MIDDLEWARE = [
