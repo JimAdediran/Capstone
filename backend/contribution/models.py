@@ -1,6 +1,8 @@
+from email.policy import default
 from django.db import models
 from authentication.models import User
 from place.models import Place
+from datetime import datetime
 
 # Create your models here.
 
@@ -15,8 +17,8 @@ item_choices = (
 
 class Contribution(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    type = models.CharField(max_length=8, choices=item_choices)
+    contribution_type = models.CharField(max_length=8, choices=item_choices)
     item = models.CharField(max_length=255)
-    date_received = models.DurationField()
+    date_received = models.DateTimeField(default=datetime.now)
     marked_for_shipment = models.BooleanField()
     place = models.ForeignKey(Place, on_delete=models.CASCADE)
