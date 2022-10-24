@@ -4,6 +4,7 @@ from authentication.models import User
 from place.models import Place
 from datetime import datetime
 
+
 # Create your models here.
 
 #item field based on 4 item types

@@ -1,3 +1,4 @@
+from unicodedata import mirrored
 from django.shortcuts import render
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import api_view, permission_classes
@@ -22,38 +23,20 @@ def get_contribution(request):
 def mark_shipment_not_food(request, products):
     contributions = Contribution.objects.filter(contribution_type=products)
     serializer = ContributionSerializer(contributions, many=True)
-    current_time = datetime.today()
+   # current_time = datetime.now()
+    current_time= '2023-02-12 00:00:00'
     for contribution in contributions:
         str_d1= current_time
-        str_d2= Contribution.date_received
-        d1= datetime.strptime(str(str_d1), "%Y-%m-%d %H:%M:%S.%f")
-        d2= datetime.strptime(str(str_d2), "%Y-%m-%d %H:%M:%S.%f")
+        str_d2= contribution.date_received.replace(microsecond=0, second=0, minute=0, hour=0)
+        d1= datetime.strptime(str(str_d1), '%Y-%m-%d %H:%M:%S')
+        d2= datetime.strptime(str(str_d2), '%Y-%m-%d %H:%M:%S')
         delta= d1-d2
         if delta.days >= 90:
-            return Contribution.marked_for_shipment == True 
+            contribution.marked_for_shipment = True 
+            contribution.save()
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-@api_view(['GET'])
-@permission_classes([AllowAny])
-def mark_shipment_not_food1(request, contribution_type, food):
-    contributions = Contribution.objects.filter(contribution_type!=food)
-    serializer = ContributionSerializer(contributions, many=True)
-    for contribution in contributions:
-        check_shipment_status()
-    return Response(serializer.data, status=status.HTTP_200_OK)
-
-
-
-def check_shipment_status():
-    str_d1= datetime.now()
-    str_d2= Contribution.date_received
-    d1=datetime.strptime(str_d1, "%Y/%m/%d")
-    d2=datetime.strptime(str_d2, "%Y/%m/%d")
-    delta= d1-d2
-    if delta.days >= 90:
-            return Contribution.marked_for_shipment == True
- 
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
