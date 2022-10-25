@@ -20,7 +20,7 @@ def get_contribution(request):
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
-def mark_shipment_not_food(request, products):
+def mark_shipment_products(request, products):
     contributions = Contribution.objects.filter(contribution_type=products)
     serializer = ContributionSerializer(contributions, many=True)
    # current_time = datetime.now()
@@ -40,10 +40,56 @@ def mark_shipment_not_food(request, products):
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
-def mark_shipment_food(request, contribution_type, food):
-    contributions = Contribution.objects.filter(contribution_type==food)
+def mark_shipment_money(request, money):
+    contributions = Contribution.objects.filter(contribution_type=money)
     serializer = ContributionSerializer(contributions, many=True)
-    delta = date - Contribution.date_received
-    if delta.days >= 30:
-        return Contribution.marked_for_shipment == True
+   # current_time = datetime.now()
+    current_time= '2023-02-12 00:00:00'
+    for contribution in contributions:
+        str_d1= current_time
+        str_d2= contribution.date_received.replace(microsecond=0, second=0, minute=0, hour=0)
+        d1= datetime.strptime(str(str_d1), '%Y-%m-%d %H:%M:%S')
+        d2= datetime.strptime(str(str_d2), '%Y-%m-%d %H:%M:%S')
+        delta= d1-d2
+        if delta.days >= 90:
+            contribution.marked_for_shipment = True 
+            contribution.save()
     return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def mark_shipment_services(request, services):
+    contributions = Contribution.objects.filter(contribution_type=services)
+    serializer = ContributionSerializer(contributions, many=True)
+   # current_time = datetime.now()
+    current_time= '2023-02-12 00:00:00'
+    for contribution in contributions:
+        str_d1= current_time
+        str_d2= contribution.date_received.replace(microsecond=0, second=0, minute=0, hour=0)
+        d1= datetime.strptime(str(str_d1), '%Y-%m-%d %H:%M:%S')
+        d2= datetime.strptime(str(str_d2), '%Y-%m-%d %H:%M:%S')
+        delta= d1-d2
+        if delta.days >= 90:
+            contribution.marked_for_shipment = True 
+            contribution.save()
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def mark_shipment_food(request, food):
+    contributions = Contribution.objects.filter(contribution_type=food)
+    serializer = ContributionSerializer(contributions, many=True)
+   # current_time = datetime.now()
+    current_time= '2023-02-12 00:00:00'
+    for contribution in contributions:
+        str_d1= current_time
+        str_d2= contribution.date_received.replace(microsecond=0, second=0, minute=0, hour=0)
+        d1= datetime.strptime(str(str_d1), '%Y-%m-%d %H:%M:%S')
+        d2= datetime.strptime(str(str_d2), '%Y-%m-%d %H:%M:%S')
+        delta= d1-d2
+        if delta.days >= 30:
+            contribution.marked_for_shipment = True 
+            contribution.save()
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
