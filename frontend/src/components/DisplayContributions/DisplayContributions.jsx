@@ -9,10 +9,10 @@ const DisplayContributions = (props) => {
                 <thead>
                     <tr>
                         <th>id</th>
-                        <th>contribution_type</th>
+                        <th>contribution type</th>
                         <th>item</th>
-                        <th>date_received</th>
-                        <th>marked_for_shipment</th>
+                        <th>date received</th>
+                        <th>marked for shipment</th>
                         <th>user_id</th>
                         <th>place_id</th>
                     </tr>
@@ -26,8 +26,8 @@ const DisplayContributions = (props) => {
                             <td>{contribution.item}</td>
                             <td>{contribution.date_received}</td>
                             <td>{contribution.marked_for_shipment}</td>
-                            <td>{contribution.user_id}</td>
-                            <td>{contribution.place_id}</td>
+                            <td>{contribution.user}</td>
+                            <td>{contribution.place}</td>
                         </tr>
                     )
     })}

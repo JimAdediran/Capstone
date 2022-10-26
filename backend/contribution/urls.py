@@ -6,5 +6,5 @@ urlpatterns = [
     path('<str:money>/', views.mark_shipment_money),
     path('<str:services>/', views.mark_shipment_services),
     path('<str:food>/', views.mark_shipment_food),
-    path('', views.get_contribution),
+    path('', views.get_all_contribution)
 ]

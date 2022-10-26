@@ -1,4 +1,5 @@
 from email.policy import default
+from xml.etree.ElementTree import tostring
 from django.db import models
 from authentication.models import User
 from place.models import Place
@@ -23,3 +24,6 @@ class Contribution(models.Model):
     date_received = models.DateTimeField(default=datetime.now)
     marked_for_shipment = models.BooleanField()
     place = models.ForeignKey(Place, on_delete=models.CASCADE)
+
+  
+   
