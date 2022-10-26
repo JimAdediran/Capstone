@@ -25,7 +25,7 @@ const DisplayContributions = (props) => {
                             <td>{contribution.contribution_type}</td>
                             <td>{contribution.item}</td>
                             <td>{contribution.date_received}</td>
-                            <td>{contribution.marked_for_shipment}</td>
+                            <td>{contribution.marked_for_shipment.toString()}</td>
                             <td>{contribution.user}</td>
                             <td>{contribution.place}</td>
                         </tr>

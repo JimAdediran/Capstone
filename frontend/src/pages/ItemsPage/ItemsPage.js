@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import DisplayContributions from "../../components/DisplayContributions/DisplayContributions";
+import useAuth from "../../hooks/useAuth";
 
 const ItemsPage = (props) => { 
-    const [contributions, setContributions] = useState([])
+    const [contributions, setContributions] = useState([]);
+    const [user, token] = useAuth();
 
     useEffect(() => {
         getAllContributions();
@@ -11,7 +13,8 @@ const ItemsPage = (props) => {
 
 const getAllContributions = async () => {
     try{
-        const response = await axios.get('http://127.0.0.1:8000/api/contribution/'
+        const response = await axios.get('http://127.0.0.1:8000/api/contribution/',
+        {headers: {Authorization: `Bearer ${token}`,},} 
         );
         setContributions(response.data)
         console.log(response.data)
