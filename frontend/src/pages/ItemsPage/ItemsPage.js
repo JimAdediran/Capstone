@@ -3,6 +3,7 @@ import axios from "axios";
 import DisplayContributions from "../../components/DisplayContributions/DisplayContributions";
 import useAuth from "../../hooks/useAuth";
 import AddContributions from "../../components/AddContributions/AddContributions";
+import PlaceIdKey from "../../components/PlaceIdKey/PlaceIdKey";
 
 const ItemsPage = (props) => { 
     const [contributions, setContributions] = useState([]);
@@ -28,6 +29,7 @@ const getAllContributions = async () => {
 return (
     <div>
        <DisplayContributions contributions={contributions} getAllContributions={getAllContributions} />
+       <PlaceIdKey />
        <AddContributions getAllContributions={getAllContributions} />
     </div>
 )
