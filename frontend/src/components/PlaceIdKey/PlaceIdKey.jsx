@@ -15,14 +15,14 @@ return (
                     </tr>
                 </thead>
                 <tbody>
-                        <tr>
-                            <td>East</td>
-                            <td>West</td>
-                            <td>South</td>
-                            <td>Alaska</td>
-                            <td>Hawaii</td>
-                            <td>Midwest</td>
-                        </tr>
+                    <tr>
+                        <td>East</td>
+                        <td>West</td>
+                        <td>South</td>
+                        <td>Alaska</td>
+                        <td>Hawaii</td>
+                         <td>Midwest</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
