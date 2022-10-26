@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import DisplayContributions from "../../components/DisplayContributions/DisplayContributions";
 import useAuth from "../../hooks/useAuth";
+import AddContributions from "../../components/AddContributions/AddContributions";
 
 const ItemsPage = (props) => { 
     const [contributions, setContributions] = useState([]);
@@ -23,9 +24,11 @@ const getAllContributions = async () => {
     }
 }
 
+
 return (
     <div>
        <DisplayContributions contributions={contributions} getAllContributions={getAllContributions} />
+       <AddContributions getAllContributions={getAllContributions} />
     </div>
 )
 
