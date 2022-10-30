@@ -6,3 +6,4 @@ class ContributionSerializer(serializers.ModelSerializer):
         model = Contribution
         fields = ['id', 'user', 'contribution_type', 'item', 'date_received', 'marked_for_shipment', 'place']
         
+        

@@ -2,6 +2,7 @@ import React from "react";
 //import { useEffect, useState } from "react";
 //import axios from "axios";
 import { Link } from "react-router-dom"
+import Inventory from "../../assets/Inventory.jpeg"
 
 const HomePageEx = () => {
 
@@ -14,8 +15,15 @@ return (
             after being received.
         </h3>
         <Link to={'/contributions'}>
-            <img src='contribution' />
+            <img src={Inventory} />
         </Link>
+        <Link to={'/charts'}>
+            <img src={Inventory} />
+        </Link>
+        <h5>
+            Click image above to view contribution inventory and to make a contribution!
+        </h5>
+
     </div>
 )
 }
