@@ -10,7 +10,7 @@ import ItemsPage from "./pages/ItemsPage/ItemsPage";
 import ChartsPage from "./pages/ChartsPage/ChartsPage";
 
 // Component Imports
-import Navbar from "./components/NavBar/NavBar";
+import ContributionNavbar from "./components/ContributionNavBar/ContributionNavBar";
 import Footer from "./components/Footer/Footer";
 
 // Util Imports
@@ -22,7 +22,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 function App() {
   return (
     <div>
-      <Navbar />
+      <ContributionNavbar />
       <Routes>
         <Route
           path="/"
@@ -37,7 +37,6 @@ function App() {
         <Route path="/contributions" element={<ItemsPage />} />
         <Route path="/charts" element={<ChartsPage />} />
       </Routes>
-      <Footer />
     </div>
   );
 }
