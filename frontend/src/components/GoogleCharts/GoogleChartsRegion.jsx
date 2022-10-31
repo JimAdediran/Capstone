@@ -3,7 +3,7 @@ import { Chart } from "react-google-charts";
 
 export const data = [
   ["Contributions", "Region"],
-  ["East", 17],
+  ["East", 18],
   ["West", 1],
   ["South", 1],
   ["Alaska", 2],

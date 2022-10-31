@@ -4,6 +4,7 @@ import DisplayContributions from "../../components/DisplayContributions/DisplayC
 import useAuth from "../../hooks/useAuth";
 import AddContributions from "../../components/AddContributions/AddContributions";
 import PlaceIdKey from "../../components/PlaceIdKey/PlaceIdKey";
+import "./ItemsPage.css"
 
 const ItemsPage = (props) => { 
     const [contributions, setContributions] = useState([]);
@@ -27,7 +28,7 @@ const getAllContributions = async () => {
 
 
 return (
-    <div>
+    <div className="items">
        <DisplayContributions contributions={contributions} getAllContributions={getAllContributions} />
        <PlaceIdKey />
        <AddContributions getAllContributions={getAllContributions} />

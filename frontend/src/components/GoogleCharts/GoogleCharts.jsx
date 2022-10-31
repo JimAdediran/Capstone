@@ -3,7 +3,7 @@ import { Chart } from "react-google-charts";
 
 export const data = [
   ["Contributions", "Value"],
-  ["Money", 3],
+  ["Money", 4],
   ["Services", 2],
   ["Products", 9],
   ["Food", 9],
