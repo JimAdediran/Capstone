@@ -11,7 +11,7 @@ import ChartsPage from "./pages/ChartsPage/ChartsPage";
 
 // Component Imports
 import ContributionNavbar from "./components/ContributionNavBar/ContributionNavBar";
-import Footer from "./components/Footer/Footer";
+
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
