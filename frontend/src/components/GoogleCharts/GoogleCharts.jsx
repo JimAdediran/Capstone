@@ -6,7 +6,7 @@ export const data = [
   ["Money", 4],
   ["Services", 2],
   ["Products", 9],
-  ["Food", 9],
+  ["Food", 10],
 ];
 export const options = {
   title: "Pie Chart for Contributions Based on Type",
