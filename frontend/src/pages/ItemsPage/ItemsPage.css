@@ -1,5 +1,11 @@
 .items {
     font-size: small;
-    color: navy;
-    background-color: khaki;
+}
+
+.tables {
+    margin: auto;
+}
+
+.forms {
+    text-align: center;
 }

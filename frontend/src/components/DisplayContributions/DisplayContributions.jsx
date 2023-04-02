@@ -5,7 +5,7 @@ const DisplayContributions = (props) => {
 
     return (
         <div>
-            <table>
+            <table className="tables">
                 <thead>
                     <tr>
                         <th>id</th>

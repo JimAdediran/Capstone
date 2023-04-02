@@ -37,8 +37,8 @@ const AddContributions = (props) => {
     }
 
     return (
-        <div>
-        <form onSubmit={handleSubmit}>
+        <div className="forms">
+        <form onSubmit={handleSubmit} >
             <label>Contribution Type</label>
             <input value={contribution_type} onChange={(event)=> setContribution_type(event.target.value)}/>
             <label>Item</label>
@@ -49,7 +49,7 @@ const AddContributions = (props) => {
             <input value={place} onChange={(event)=> setPlace(event.target.value)}/>
             <button type='submit'>Submit</button>
         </form>
-    </div>
+        </div>
     )
  
 }

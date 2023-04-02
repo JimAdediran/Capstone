@@ -3,7 +3,7 @@ const PlaceIdKey = () => {
 
 return (
     <div>
-            <table>
+            <table className="tables">
                 <thead>
                     <tr>
                         <th>1</th>
