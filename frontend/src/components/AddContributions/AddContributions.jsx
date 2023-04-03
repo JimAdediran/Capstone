@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
+import "./AddContributions.css";
 
 const AddContributions = (props) => {
     const [user, token] = useAuth();
@@ -47,7 +48,7 @@ const AddContributions = (props) => {
             <input value={marked_for_shipment} onChange={(event)=> setMarked_for_shipment(event.target.value)}/>
             <label>Place</label>
             <input value={place} onChange={(event)=> setPlace(event.target.value)}/>
-            <button type='submit'>Submit</button>
+            <button className="buttons" type='submit'>Submit</button>
         </form>
         </div>
     )
