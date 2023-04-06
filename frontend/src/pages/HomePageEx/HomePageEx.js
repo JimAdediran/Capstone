@@ -19,16 +19,16 @@ return (
         <br /> <br /> 
         <Link to={'/contributions'}>
             <img src={Inventory} />
-            <h5>
+            <h3>
             Contribution database
-            </h5>
+            </h3>
         </Link>
         <br /> <br /> 
         <Link to={'/charts'}>
             <img src={Analytics} />
-            <h5>
+            <h3>
             View contributions based on type or region
-            </h5>
+            </h3>
         </Link>
         <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />  
     </div>
